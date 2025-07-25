@@ -1,0 +1,148 @@
+body {
+    font-family: Times New Roman, sans-serif;
+    background-color: #a4baf3ff; /* Warna latar belakang gelap */
+    color: #e0e0e0; /* Warna teks terang */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Mengatur item ke atas */
+    min-height: 100vh;
+    margin: 20px 0; /* Memberi sedikit margin atas dan bawah */
+}
+
+.container {
+    background-color: #d783b4ff; /* Warna latar belakang kontainer */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(172, 134, 134, 0.5);
+    width: 90%;
+    max-width: 700px;
+}
+
+h1 {
+    text-align: center;
+    color: #f8f1f5ff; /* Warna judul yang cerah */
+    margin-bottom: 30px;
+}
+
+.input-section, .controls-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+input[type="text"], input[type="date"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #4a4f5f;
+    color: #cfdadaff;
+    font-size: 16px;
+}
+
+input[type="text"]::placeholder, input[type="date"] {
+    color: #bbb;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    color: #fff;
+}
+
+#add-todo-btn {
+    background-color: #61dafb; /* Warna tombol tambah */
+}
+
+#add-todo-btn:hover {
+    background-color: #21a1f1;
+}
+
+#delete-all-btn {
+    background-color: #ff6b6b; /* Warna tombol hapus semua */
+}
+
+#delete-all-btn:hover {
+    background-color: #e04848;
+}
+
+#filter-input {
+    flex-grow: 1;
+}
+
+.task-list-container {
+    overflow-x: auto; /* Menggulir secara horizontal jika tabel terlalu lebar */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+    word-wrap: break-word; /* Memecah kata panjang */
+}
+
+table th {
+    background-color: #373b46ff;
+    color: #61dafb;
+    font-weight: bold;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+.no-task-found {
+    text-align: center;
+    font-style: italic;
+    color: #bbb;
+}
+
+.actions button {
+    padding: 8px 12px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.actions .delete-btn {
+    background-color: #f44336;
+}
+
+.actions .delete-btn:hover {
+    background-color: #da190b;
+}
+
+.actions .complete-btn {
+    background-color: #70c773ff;
+}
+
+.actions .complete-btn:hover {
+    background-color: #45a049;
+}
+
+.completed-task {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .input-section, .controls-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    button {
+        width: 100%;
+    }
+}
