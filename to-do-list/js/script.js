@@ -6,16 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterInput = document.getElementById('filter-input');
     const deleteAllBtn = document.getElementById('delete-all-btn');
 
-    let tasks = JSON.parse(localStorage.getItem('tasks')) || []; // Memuat tugas dari Local Storage
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || []; 
 
-    // Fungsi untuk menyimpan tugas ke Local Storage
+   
     const saveTasks = () => {
         localStorage.setItem('tasks', JSON.stringify(tasks));
     };
-
-    // Fungsi untuk menampilkan tugas
+    
     const renderTasks = (filterText = '') => {
-        todoList.innerHTML = ''; // Bersihkan daftar sebelum merender ulang
+        todoList.innerHTML = ''; 
 
         const filteredTasks = tasks.filter(task =>
             task.text.toLowerCase().includes(filterText.toLowerCase())
@@ -46,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
             todoList.appendChild(row);
         });
 
-        attachEventListeners(); // Pastikan event listener dipasang setiap kali daftar dirender
+        attachEventListeners(); 
     };
 
-    // Fungsi untuk menambahkan tugas
+   
     const addTask = () => {
         const todoText = todoInput.value.trim();
         const dueDate = dueDateInput.value;
@@ -68,27 +67,25 @@ document.addEventListener('DOMContentLoaded', () => {
         tasks.push(newTask);
         saveTasks();
         renderTasks();
-        todoInput.value = ''; // Kosongkan input
-        dueDateInput.value = ''; // Kosongkan input tanggal
+        todoInput.value = ''; 
+        dueDateInput.value = ''; 
     };
 
-    // Fungsi untuk menghapus tugas
+   
     const deleteTask = (index) => {
         if (confirm('Are you sure you want to delete this task?')) {
             tasks.splice(index, 1);
             saveTasks();
-            renderTasks(filterInput.value); // Render ulang dengan filter yang ada
+            renderTasks(filterInput.value); 
         }
     };
 
-    // Fungsi untuk mengubah status tugas (complete/uncomplete)
     const toggleComplete = (index) => {
         tasks[index].completed = !tasks[index].completed;
         saveTasks();
-        renderTasks(filterInput.value); // Render ulang dengan filter yang ada
+        renderTasks(filterInput.value); 
     };
-
-    // Fungsi untuk menghapus semua tugas
+    
     const deleteAllTasks = () => {
         if (confirm('Are you sure you want to delete all tasks? This action cannot be undone.')) {
             tasks = [];
@@ -97,13 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Fungsi untuk melampirkan event listeners ke tombol
     const attachEventListeners = () => {
         document.querySelectorAll('.delete-btn').forEach(button => {
             button.onclick = (e) => {
-                // Mendapatkan index dari atribut data-index
+                
                 const index = parseInt(e.target.dataset.index);
-                // Sesuaikan index berdasarkan filteredTasks jika ada filter
+              
                 const filteredTasks = tasks.filter(task =>
                     task.text.toLowerCase().includes(filterInput.value.toLowerCase())
                 );
@@ -124,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Event Listeners
+
     addTodoBtn.addEventListener('click', addTask);
 
     todoInput.addEventListener('keypress', (e) => {
@@ -139,6 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     deleteAllBtn.addEventListener('click', deleteAllTasks);
 
-    // Initial render saat halaman dimuat
+
     renderTasks();
 });
