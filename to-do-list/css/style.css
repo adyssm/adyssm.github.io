@@ -1,16 +1,16 @@
 body {
     font-family: Times New Roman, sans-serif;
-    background-color: #a4baf3ff; /* Warna latar belakang gelap */
-    color: #e0e0e0; /* Warna teks terang */
+    background-color: #a4baf3ff; 
+    color: #e0e0e0; 
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Mengatur item ke atas */
+    align-items: flex-start; 
     min-height: 100vh;
-    margin: 20px 0; /* Memberi sedikit margin atas dan bawah */
+    margin: 20px 0; 
 }
 
 .container {
-    background-color: #d783b4ff; /* Warna latar belakang kontainer */
+    background-color: #d783b4ff; 
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(172, 134, 134, 0.5);
@@ -20,7 +20,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #f8f1f5ff; /* Warna judul yang cerah */
+    color: #f8f1f5ff; 
     margin-bottom: 30px;
 }
 
@@ -56,7 +56,7 @@ button {
 }
 
 #add-todo-btn {
-    background-color: #61dafb; /* Warna tombol tambah */
+    background-color: #61dafb; 
 }
 
 #add-todo-btn:hover {
@@ -64,7 +64,7 @@ button {
 }
 
 #delete-all-btn {
-    background-color: #ff6b6b; /* Warna tombol hapus semua */
+    background-color: #ff6b6b; 
 }
 
 #delete-all-btn:hover {
@@ -76,7 +76,7 @@ button {
 }
 
 .task-list-container {
-    overflow-x: auto; /* Menggulir secara horizontal jika tabel terlalu lebar */
+    overflow-x: auto; 
 }
 
 table {
@@ -89,7 +89,7 @@ table th, table td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #555;
-    word-wrap: break-word; /* Memecah kata panjang */
+    word-wrap: break-word; 
 }
 
 table th {
